@@ -24,21 +24,27 @@ public class SimpleDAO implements ISimpleDAO {
 
     @Override
     public SimpleDTO selectOneDAO(String id) {
-        return null;
+        String sql = "select * from simple_bbs where id = " + id;
+        SimpleDTO dto = jdbcTemplate.queryForObject(sql,
+                new BeanPropertyRowMapper<SimpleDTO>(SimpleDTO.class));
+        return dto;
     }
 
     @Override
     public int insertDAO(String writer, String title, String content) {
-        return 0;
+        String sql = "insert into simple_bbs(writer, title, content) values(?, ?, ?)";
+        return jdbcTemplate.update(sql, writer, title, content);
     }
 
     @Override
-    public int updateDAO(String id, String writer, String title, String content) {
-        return 0;
+    public int updateDAO(String writer, String title, String content, String id) {
+        String sql = "update simple_bbs set writer = ?, title = ?, content = ? where id = ?";
+        return jdbcTemplate.update(sql, writer, title, content, Integer.parseInt(id));
     }
 
     @Override
     public int deleteDAO(String id) {
-        return 0;
+        String sql = "delete from simple_bbs where id = ?";
+        return jdbcTemplate.update(sql, Integer.parseInt(id));
     }
 }

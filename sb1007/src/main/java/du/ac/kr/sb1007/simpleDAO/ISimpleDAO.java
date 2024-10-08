@@ -8,6 +8,6 @@ public interface ISimpleDAO {
     public List<SimpleDTO> selectDAO();
     public SimpleDTO selectOneDAO(String id);
     public int insertDAO(String writer, String title, String content);
-    public int updateDAO(String id, String writer, String title, String content);
+    public int updateDAO(String writer, String title, String content, String id);
     public int deleteDAO(String id);
 }

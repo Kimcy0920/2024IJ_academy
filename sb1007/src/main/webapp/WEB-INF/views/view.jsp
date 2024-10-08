@@ -16,6 +16,7 @@
 <hr>
 
 <br>
+<p><a href="updateForm?id=${dto.id}">글 수정</a>
 <p><a href="list">목록보기</a>
  
 </body>
