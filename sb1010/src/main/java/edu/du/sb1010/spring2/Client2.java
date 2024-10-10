@@ -1,7 +1,4 @@
-package edu.du.sb1010.spring;
-
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.InitializingBean;
+package edu.du.sb1010.spring2;
 
 public class Client2 { // implements없이 AppCtx2에 Bean등록, 메서드명을 지정해 사용가능함.
     private String host;

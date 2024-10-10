@@ -33,13 +33,15 @@ public class ExeTimeAspect {
 //    @Around("publicTarget()") // Advice 종류 중 하나, Pointcut 조건대상
     @Around("execution(public * *..chap07..*(..))") // Pointcut 거치지 않고, Around 바로 조건입력
     public Object measure(ProceedingJoinPoint joinPoint) throws Throwable {
-        // ProceedingJoinPoint joinPoint
+                       // ProceedingJoinPoint joinPoint
         long start = System.nanoTime();
         try {
-            Object result = joinPoint.proceed(); // Object타입을 사용해 어떤 타입이 와도 상관이 없음
-        // joinPoint.proceed()
+            // 2. 코드 실행 순서
+            Object result = joinPoint.proceed(); // Object 타입을 사용해 어떤 타입이 와도 상관이 없음
+                         // joinPoint.proceed()
             return result;
         } finally {
+            // 3. 코드 실행 순서
             long finish = System.nanoTime();
             Signature sig = joinPoint.getSignature();
             System.out.printf("%s.%s(%s) 실행 시간 : %d ns\n",

@@ -1,7 +1,7 @@
 package edu.du.sb1010.config;
 
-import edu.du.sb1010.spring.Client;
-import edu.du.sb1010.spring.Client2;
+import edu.du.sb1010.spring2.Client;
+import edu.du.sb1010.spring2.Client2;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;

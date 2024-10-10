@@ -28,7 +28,10 @@ public class CacheAspect {
             return cache.get(num);
         }
 
+        // 1. 코드 실행 순서
         Object result = joinPoint.proceed(); // 캐시에 없으면 프록시 대상객체를 실행해 추가함
+
+        // 4. 코드 실행 순서
         cache.put(num, result); // 대상객체를 실행한 결과를 캐시에 추가함
         System.out.printf("CacheAspect: Cache 추가[%d]\n", num);
         return result; // 결과값 리턴

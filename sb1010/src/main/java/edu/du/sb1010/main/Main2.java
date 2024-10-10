@@ -1,7 +1,7 @@
 package edu.du.sb1010.main;
 
 import edu.du.sb1010.config.AppCtx2;
-import edu.du.sb1010.spring.Client2;
+import edu.du.sb1010.spring2.Client2;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 
