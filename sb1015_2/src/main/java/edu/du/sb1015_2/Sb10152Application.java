@@ -34,24 +34,31 @@ public class Sb10152Application {
     public void init() {
         MyData d1 = new MyData();
         d1.setName("차범근");
-        d1.setAge(60);
+        d1.setAge(75);
         d1.setEmail("bkCha@korea.com");
         d1.setMemo("레버쿠젠");
         repository.saveAndFlush(d1);
 
         MyData d2 = new MyData();
         d2.setName("박지성");
-        d2.setAge(40);
+        d2.setAge(45);
         d2.setEmail("jsPark@korea.com");
         d2.setMemo("맨체스터 유나이티드");
         repository.saveAndFlush(d2);
 
         MyData d3 = new MyData();
-        d3.setName("손흥민");
-        d3.setAge(31);
-        d3.setEmail("hmSon@korea.com");
-        d3.setMemo("토트넘 훗스퍼");
+        d3.setName("박주영");
+        d3.setAge(40);
+        d3.setEmail("jyPark@korea.com");
+        d3.setMemo("아스널");
         repository.saveAndFlush(d3);
+
+        MyData d4 = new MyData();
+        d4.setName("손흥민");
+        d4.setAge(30);
+        d4.setEmail("hmSon@korea.com");
+        d4.setMemo("토트넘 훗스퍼");
+        repository.saveAndFlush(d4);
 
         // save(), findById(), findAll() - select
         // deleteById() - delete
