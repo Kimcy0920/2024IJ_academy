@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    h1 { font-size:18pt; font-weight:bold; color:gray; }
+    body { font-size:13pt; color:gray; margin:5px 25px; }
+    tr { margin:5px; }
+    th { padding: 5px; color:white; background: darkgray; }
+    td { padding: 5px; color:black; background: #e0e0ff; }
+  </style>
+</head>
+<body>
+<table>
+  <h1>UPDATE EMP TABLE</h1>
+  <form method="post" action="/edit" th:object="${formModel}">
+    <input type="hidden" name="id" th:value="*{id}">
+    <tr><td>EMPNO</td>
+      <td><input type="text" name="empno" th:value="*{empno}" /></td></tr>
+    <tr><td>ENAME</td>
+      <td><input type="text" name="ename" th:value="*{ename}" /></td></tr>
+    <tr><td>JOB</td>
+      <td><input type="text" name="job" th:value="*{job}" /></td></tr>
+    <tr><td>MGR</td>
+      <td><input type="text" name="mgr" th:value="*{mgr}" /></td></tr>
+    <tr><td>HIREDATE</td>
+      <td><input type="text" name="hiredate" th:value="*{hiredate}" /></td></tr>
+    <tr><td>SAL</td>
+      <td><input type="text" name="sal" th:value="*{sal}" /></td></tr>
+    <tr><td>COMM</td>
+      <td><input type="text" name="comm" th:value="*{comm}" /></td></tr>
+    <tr><td>DEPTNO</td>
+      <td><input type="text" name="deptno" th:value="*{deptno}" /></td></tr>
+    <tr><td></td><td><input type="button" value="update"/></td></tr>
+  </form>
+</table>
+</body>
+</html>
