@@ -31,7 +31,7 @@
     <td th:text="${obj.ename}"></td>
     <td th:text="${obj.job}"></td>
     <td th:text="${obj.mgr}"></td>
-    <td th:text="${obj.hiredate}"></td>
+    <td th:text="${#dates.format(obj.hiredate, 'yyyy-MM-dd')}"></td>
     <td th:text="${obj.sal}"></td>
     <td th:text="${obj.comm}"></td>
     <td th:text="${obj.deptno}"></td>
@@ -42,5 +42,9 @@
     </td>
   </tr>
 </table>
+<hr/>
+<form method="get" action="/insert">
+  <button type="submit">insert</button>
+</form>
 </body>
 </html>

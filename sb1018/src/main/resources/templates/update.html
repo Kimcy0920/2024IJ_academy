@@ -13,25 +13,33 @@
 <body>
 <table>
   <h1>UPDATE EMP TABLE</h1>
-  <form method="post" action="/edit" th:object="${formModel}">
-    <input type="hidden" name="id" th:value="*{id}">
+  <form method="post" action="/edit">
+    <input type="hidden" name="id" th:value="${obj.empno}">
     <tr><td>EMPNO</td>
-      <td><input type="text" name="empno" th:value="*{empno}" /></td></tr>
+      <td><input type="text" name="empno" th:value="*{obj.empno}" readonly/></td></tr>
     <tr><td>ENAME</td>
-      <td><input type="text" name="ename" th:value="*{ename}" /></td></tr>
+      <td><input type="text" name="ename" th:value="*{obj.ename}" /></td></tr>
     <tr><td>JOB</td>
-      <td><input type="text" name="job" th:value="*{job}" /></td></tr>
+      <td><input type="text" name="job" th:value="*{obj.job}" /></td></tr>
     <tr><td>MGR</td>
-      <td><input type="text" name="mgr" th:value="*{mgr}" /></td></tr>
+      <td><input type="text" name="mgr" th:value="*{obj.mgr}" /></td></tr>
     <tr><td>HIREDATE</td>
-      <td><input type="text" name="hiredate" th:value="*{hiredate}" /></td></tr>
+      <td><input type="date" name="hiredate" th:value="*{obj.hiredate}" required/></td></tr>
     <tr><td>SAL</td>
-      <td><input type="text" name="sal" th:value="*{sal}" /></td></tr>
+      <td><input type="text" name="sal" th:value="*{obj.sal}" /></td></tr>
     <tr><td>COMM</td>
-      <td><input type="text" name="comm" th:value="*{comm}" /></td></tr>
+      <td><input type="text" name="comm" th:value="*{obj.comm}" /></td></tr>
     <tr><td>DEPTNO</td>
-      <td><input type="text" name="deptno" th:value="*{deptno}" /></td></tr>
-    <tr><td></td><td><input type="button" value="update"/></td></tr>
+      <td>
+        <select name="deptno">
+          <option value="10" th:selected="${obj.deptno == 10}">10</option>
+          <option value="20" th:selected="${obj.deptno == 20}">20</option>
+          <option value="30" th:selected="${obj.deptno == 30}">30</option>
+          <option value="40" th:selected="${obj.deptno == 40}">40</option>
+        </select>
+      </td>
+    </tr>
+    <tr><td></td><td><input type="submit" value="update"/></td></tr>
   </form>
 </table>
 </body>
