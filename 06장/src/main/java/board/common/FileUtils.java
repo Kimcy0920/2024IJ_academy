@@ -24,7 +24,7 @@ public class FileUtils {
 		
 		List<BoardFileDto> fileList = new ArrayList<>();
 		
-		DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyyMMdd");  // 오늘 날짜로 업로드 파일을 저장할 폴더 생성
+		DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyyMMdd"); 
     	ZonedDateTime current = ZonedDateTime.now();
     	String path = "images/"+current.format(format);
     	File file = new File(path);
@@ -44,7 +44,7 @@ public class FileUtils {
 					if(ObjectUtils.isEmpty(contentType)){
 						break;
 					}
-					else{ // 타입 확인, 이미지만 가능하게 조건문을 씀
+					else{
 						if(contentType.contains("image/jpeg")) {
 							originalFileExtension = ".jpg";
 						}
@@ -59,13 +59,13 @@ public class FileUtils {
 						}
 					}
 					
-					newFileName = Long.toString(System.nanoTime()) + originalFileExtension; // 파일 이름짓기, 중복되지 않는 임의의 이름
+					newFileName = Long.toString(System.nanoTime()) + originalFileExtension;
 					BoardFileDto boardFile = new BoardFileDto();
 					boardFile.setBoardIdx(boardIdx);
 					boardFile.setFileSize(multipartFile.getSize());
 					boardFile.setOriginalFileName(multipartFile.getOriginalFilename());
 					boardFile.setStoredFilePath(path + "/" + newFileName);
-					fileList.add(boardFile); // List<BoardFileDto> fileList = new ArrayList<>();
+					fileList.add(boardFile);
 					
 					file = new File(path + "/" + newFileName);
 					multipartFile.transferTo(file);

@@ -10,7 +10,6 @@ import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.ObjectUtils;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
@@ -24,8 +23,8 @@ import board.board.service.BoardService;
 public class BoardController {
 	
 	@Autowired
-	private BoardService boardService;
-
+	private BoardService boardService; 
+	
 	@RequestMapping("/board/openBoardList.do")
 	public ModelAndView openBoardList() throws Exception{
 		ModelAndView mv = new ModelAndView("/board/boardList");
@@ -41,7 +40,7 @@ public class BoardController {
 		return "/board/boardWrite";
 	}
 	
-	@RequestMapping("/board/insertBoard.do") // Multipart 내 파일을 서버에 복사하는 것.
+	@RequestMapping("/board/insertBoard.do")
 	public String insertBoard(BoardDto board, MultipartHttpServletRequest multipartHttpServletRequest) throws Exception{
 		boardService.insertBoard(board, multipartHttpServletRequest);
 		return "redirect:/board/openBoardList.do";
